@@ -6,9 +6,13 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+	// LIST OF ORGS
 	this.route('orgs', {});
+	// INDIVIDUAL ORG
 	this.route('org', { path: 'org/:id' }, function() {
+		// LIST OF REPOS
 		this.route('repos', {});
+		// INDIVIDUAL REPO
 		this.route('repo', { path: ':repoid' }, function() {
 			this.route('contributors', {});
 			this.route('issues', {});
